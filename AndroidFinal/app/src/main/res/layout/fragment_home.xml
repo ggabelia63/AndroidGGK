@@ -11,14 +11,18 @@
         android:orientation="vertical">
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/search"
-            android:hint="search book"/>
-        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="search book"
+            android:paddingTop="80dp" />
+        <Button
             android:id="@+id/search_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:text="Submit"
+            android:textColor="@color/black"
             />
 
         <androidx.recyclerview.widget.RecyclerView

@@ -27,12 +27,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        setContentView(R.layout.activity_main)
         val intentFilter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION).apply {
             addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED)
         }
-        val broadReceiver: BroadcastReceiver = com.example.project.BroadcastReceiver()
-        registerReceiver(broadReceiver, intentFilter)
-
 
     }
 

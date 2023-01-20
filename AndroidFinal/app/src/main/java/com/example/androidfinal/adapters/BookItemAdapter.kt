@@ -15,12 +15,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.androidfinal.R
 import com.example.androidfinal.data.BookDto
 import com.example.androidfinal.data.BookViewModel
-import com.example.androidfinal.fragments.HomeFragment
+import com.example.androidfinal.fragments.HomeFragmentDirections
 import com.example.androidfinal.models.Books
 import com.squareup.picasso.Picasso
 
 private lateinit var bBooksViewModel: BookViewModel
-
 class BookItemAdapter(private val books: Books, private val bBooksViewModel: BookViewModel, private val context: Context): RecyclerView.Adapter<BookItemAdapter.ViewHolder>() {
     class ViewHolder(bookView: View) : RecyclerView.ViewHolder(bookView) {
         val title: TextView = bookView.findViewById(R.id.book_title_item)
@@ -37,6 +36,7 @@ class BookItemAdapter(private val books: Books, private val bBooksViewModel: Boo
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.book_item, parent, false)
         return ViewHolder(view)
+
 
     }
 

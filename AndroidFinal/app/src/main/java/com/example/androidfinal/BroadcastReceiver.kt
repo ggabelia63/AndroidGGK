@@ -1,3 +1,4 @@
+package com.example.androidfinal
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.BroadcastReceiver
@@ -6,7 +7,7 @@ import android.content.Intent
 import android.os.Build
 import android.provider.Settings
 import androidx.annotation.RequiresApi
-import com.example.androidfinal.notification.NotificationUtil
+import com.example.project.NotificationUtil
 
 class BroadcastReceiver : BroadcastReceiver() {
     @RequiresApi(Build.VERSION_CODES.O)

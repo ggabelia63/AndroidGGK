@@ -1,12 +1,5 @@
 package com.example.androidfinal.fragments
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.content.Context
-import android.content.Context.NOTIFICATION_SERVICE
-import android.os.Build
-import android.os.Build.VERSION
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,10 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.core.app.NotificationCompat
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.content.ContextCompat.getSystemServiceName
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,12 +20,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class HomeFragment: Fragment() {
     private lateinit var bBooksViewModel: BookViewModel
-    private val ChannelId = ""
-    private val notificationId = 101
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,8 +30,6 @@ class HomeFragment: Fragment() {
         bBooksViewModel = ViewModelProvider(this).get(BookViewModel::class.java)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
-
-
 
 
 
@@ -68,6 +51,7 @@ class HomeFragment: Fragment() {
                             true -> {
                                 val books = response.body()!!
                                 recyclerView.adapter = BookItemAdapter(books, bBooksViewModel, requireContext())
+                                recyclerView.adapter?.notifyDataSetChanged()
                             }
                             false -> Toast.makeText(view.context, "No response", Toast.LENGTH_LONG)
                                 .show()
@@ -87,20 +71,5 @@ class HomeFragment: Fragment() {
 
         loadData()
         return view
-    }
-
-    @RequiresApi(Build.VERSION_CODES.O)
-    private fun createNotificationChannel(){
-        if (VERSION.SDK_INT>= Build.VERSION_CODES.O){
-            val name = "Success"
-            val description_text = "Added to Favorites"
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val channel = NotificationChannel(ChannelId,name,importance).apply {
-                description= description_text
-            }
-
-            val notificationManager = requireActivity().getSystemService(NotificationManager::class.java)
-            notificationManager.createNotificationChannel(channel)
-        }
     }
 }
