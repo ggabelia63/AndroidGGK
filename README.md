@@ -12,3 +12,4 @@
 გვაქვს ასევე 3 fragment და 1 Main Activity .
 
 ასევე ვიყენებთ ბაზას და Notification-ს (Airplane on/off) და ასევე broadcast Reciever-ს
+![image](https://user-images.githubusercontent.com/87323397/213850074-6a46bee1-38fa-4155-a7ef-2f744ae53993.png)
