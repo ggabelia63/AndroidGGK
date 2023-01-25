@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object BooksApi {
-    private const val baseUrl = "https://api.itbook.store/1.0/new"
+    private const val baseUrl = "https://api.itbook.store/1.0/"
     private lateinit var okHttpClient: OkHttpClient
     private lateinit var retrofit: Retrofit
 

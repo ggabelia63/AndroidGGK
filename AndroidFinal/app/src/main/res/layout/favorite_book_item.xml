@@ -11,45 +11,36 @@
         app:layout_constraintBottom_toTopOf="parent">
 
 
-
         <ImageView
-            android:id="@+id/book_image_item"
+            android:id="@+id/book_image"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:scaleType="centerCrop"/>
         <TextView
-            android:id="@+id/book_title_item"
+            android:id="@+id/book_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
         <TextView
-            android:id="@+id/book_desc_item"
+            android:id="@+id/book_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
         <TextView
-            android:id="@+id/source"
+            android:id="@+id/book_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
-        <TextView
-            android:id="@+id/urlToImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-        <TextView
-            android:id="@+id/author"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:textSize="20sp"
+            android:textColor="@color/white"/>
+
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/delete_btn"
-            android:text="delete"/>
+            android:text="Delete"/>
 
     </LinearLayout>
 

@@ -47,17 +47,15 @@
             android:name="title"
             app:argType="string" />
         <argument
-            android:name="description"
+            android:name="subtitle"
             app:argType="string" />
         <argument
-            android:name="urlToImage"
+            android:name="price"
             app:argType="string" />
         <argument
-            android:name="source"
+            android:name="image"
             app:argType="string" />
-        <argument
-            android:name="author"
-            app:argType="string" />
+
 
 
     </fragment>

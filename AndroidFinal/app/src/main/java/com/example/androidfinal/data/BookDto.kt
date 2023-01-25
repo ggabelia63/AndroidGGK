@@ -1,5 +1,6 @@
 package com.example.androidfinal.data
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -7,9 +8,12 @@ import androidx.room.PrimaryKey
 data class BookDto(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val author: String,
-    val source : String,
+    @ColumnInfo(name = "title" , defaultValue = "0")
     val title: String,
-    val description: String,
-    val urlToImage: String,
+    @ColumnInfo(name = "subtitle" , defaultValue = "0")
+    val subtitle: String,
+    @ColumnInfo(name = "price" , defaultValue = "0")
+    val price: String,
+    @ColumnInfo(name = "image" , defaultValue = "0")
+    val image: String,
 )

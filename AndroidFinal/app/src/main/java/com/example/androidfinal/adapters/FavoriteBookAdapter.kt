@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
@@ -23,31 +24,34 @@ import com.example.androidfinal.fragments.DetailInfoFragmentDirections
 
 
 class FavoriteBookAdapter (
+
     private val context: Context, private val bBooksViewModel: BookViewModel):
     RecyclerView.Adapter<FavoriteBookAdapter.ViewHolder>() {
     private var bookList = emptyList<BookDto>()
-
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val title: TextView = itemView.findViewById(R.id.book_title_item)
-        val description: TextView = itemView.findViewById(R.id.book_desc_item)
-        val image: ImageView = itemView.findViewById(R.id.book_image_item)
-        val cardView: CardView = itemView.findViewById(R.id.cardView)
+        val title: TextView = itemView.findViewById(R.id.book_title)
+        val subtitle: TextView = itemView.findViewById(R.id.book_desc)
+        val image: ImageView = itemView.findViewById(R.id.book_image)
+        //        val cardView: CardView = itemView.findViewById(R.id.cardView)
         val deleteBtn: Button = itemView.findViewById(R.id.delete_btn)
-        val source : TextView = itemView.findViewById(R.id.source)
-        val author : TextView = itemView.findViewById(R.id.author)
-    }
+        val price : TextView = itemView.findViewById(R.id.book_price)
+
+}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.favorite_book_item, parent, false))
+        //return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.favorite_book_item, parent, false))
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.favorite_book_item, parent, false)
+        return ViewHolder(view)
+
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val book = bookList[position]
         holder.title.text = book.title
-        holder.description.text = book.description
-        holder.source.text = book.source
-        holder.author.text = book.author
-        Picasso.get().load(Uri.parse(book.urlToImage)).into(holder.image)
+        holder.subtitle.text = book.subtitle
+        holder.price.text = book.price
+        Picasso.get().load(Uri.parse(book.image)).into(holder.image)
+
 
         holder.deleteBtn.setOnClickListener {
             val builder = AlertDialog.Builder(context)
@@ -60,16 +64,6 @@ class FavoriteBookAdapter (
             builder.setTitle("Delete ${book.title}?")
             builder.setMessage("Are you sure you want to delete ${book.title}?")
             builder.create().show()
-        }
-        holder.cardView.setOnClickListener {
-            val action = DetailInfoFragmentDirections.actionFragmentDetailInfoToFavoriteFragment(
-                book.title,
-                book.description,
-                book.source,
-                book.author,
-                book.author
-            )
-            holder.cardView.findNavController().navigate(action)
         }
     }
 

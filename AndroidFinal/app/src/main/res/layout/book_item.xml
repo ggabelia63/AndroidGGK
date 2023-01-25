@@ -12,24 +12,25 @@
         app:layout_constraintBottom_toTopOf="parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="170dp"
             android:orientation="horizontal">
             <ImageView
                 android:id="@+id/book_image_item"
                 android:layout_width="147dp"
-                android:layout_height="117dp"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop" />
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent">
-            <TextView
-                android:id="@+id/book_title_item"
-                android:paddingTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/book_title_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:paddingTop="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/book_desc_item"
@@ -40,6 +41,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:height="200dp"
                     android:id="@+id/add_btn"
                     android:text="add to favorites"/>
             </LinearLayout>

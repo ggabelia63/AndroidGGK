@@ -27,7 +27,7 @@ class FavoriteFragment: Fragment() {
         bBooksViewModel = ViewModelProvider(this).get(BookViewModel::class.java)
 
         val adapter = FavoriteBookAdapter(requireContext(), bBooksViewModel)
-        val recyclerView = view.findViewById<RecyclerView>(R.id.favoriteFragment)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.favoriteFragment_)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 

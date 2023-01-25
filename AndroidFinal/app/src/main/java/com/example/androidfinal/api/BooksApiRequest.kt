@@ -8,8 +8,8 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface BooksApiRequest {
-    @GET("books")
+    @GET("new")
     fun getBooks(
-        @Query("new") searchWord: String
+
     ): Call<Books>
 }

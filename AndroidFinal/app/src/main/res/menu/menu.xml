@@ -3,12 +3,12 @@
 
 
     <item android:title="Home"
-        android:id="@+id/homeFragment"
+        android:id="@+id/homeFragmentMenu1"
         android:label = "Home"
         android:icon="@drawable/ic_baseline_home_24" />
 
     <item android:title="Favorite"
-        android:id="@+id/favoriteFragment"
+        android:id="@+id/favoriteFragmentMenu2"
         android:label = "Favorite"
         android:icon="@drawable/ic_baseline_star_24" />
 </menu>

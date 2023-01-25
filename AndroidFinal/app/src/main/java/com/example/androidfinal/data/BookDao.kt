@@ -5,6 +5,7 @@ import androidx.room.*
 
 @Dao
 interface BookDao {
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addBook(bookDto: BookDto)
 
