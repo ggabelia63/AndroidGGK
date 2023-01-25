@@ -2,10 +2,12 @@ package com.example.androidfinal
 
 import android.R.attr.author
 import android.content.BroadcastReceiver
+import android.content.ClipData
 import android.content.Intent
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -29,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.favoriteFragment))
         setupActionBarWithNavController(navController, appBarConfiguration)
         bottomNavigationView.setupWithNavController(navController)
+
+
 
 
         val intentFilter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION).apply {

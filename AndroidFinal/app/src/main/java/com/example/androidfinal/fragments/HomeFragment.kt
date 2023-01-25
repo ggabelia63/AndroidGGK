@@ -42,25 +42,25 @@ class HomeFragment: Fragment() {
 
 
 
-        view.findViewById<Button>(R.id.search_btn).setOnClickListener {
-            loadData(view, recyclerView)
-        }
+//        view.findViewById<Button>(R.id.search_btn).setOnClickListener {
+//            loadData(view, recyclerView)
+//        }
 
         loadData(view,recyclerView)
         return view
     }
 
-    private fun getTextFromSearch(view : View): String? {
-        val text = view.findViewById<EditText>(R.id.search).text.toString()
-        return text.ifEmpty {
-            Toast.makeText(view.context, "Fill the Field", Toast.LENGTH_LONG).show()
-            null
-        }
-    }
+//    private fun getTextFromSearch(view : View): String? {
+//        val text = view.findViewById<EditText>(R.id.search).text.toString()
+//        return text.ifEmpty {
+//            Toast.makeText(view.context, "Fill the Field", Toast.LENGTH_LONG).show()
+//            null
+//        }
+//    }
 
      private fun loadData(view: View, recyclerView: RecyclerView) {
 
-        val searchText = getTextFromSearch(view)
+//        val searchText = getTextFromSearch(view)
 
             val call = BooksApi.requests.getBooks()
             call.enqueue(object : Callback<Books> {
